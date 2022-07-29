@@ -11,7 +11,7 @@ fi
 APPDIR="python-$version"
 PKGNAME="Python-$version"
 MAKE_OPT="./configure --prefix=$basepath/${APPDIR} \
-–-enable-optimizations"
+--enable-optimizations"
 
 _python_make_install(){
     wget -c https://www.python.org/ftp/python/$version/$PKGNAME.tar.xz
