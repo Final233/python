@@ -15,7 +15,7 @@ _python_make_install(){
     wget -c https://www.python.org/ftp/python/$version/$PKGNAME.tar.xz
     tar xf $PKGNAME.tar.xz
     ls -l
-    cd python-$version && $MAKE_OPT && make -j $(nproc) && make install 
+    cd $PKGNAME && $MAKE_OPT && make -j $(nproc) && make install 
 }
 
 _python_make_install "$@"
