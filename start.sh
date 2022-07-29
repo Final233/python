@@ -8,7 +8,8 @@ else
     version="$@"
 fi
 
-APPDIR="python-$version"
+mkdir apps
+APPDIR="apps/python-$version"
 PKGNAME="Python-$version"
 MAKE_OPT="./configure --prefix=$basepath/${APPDIR} \
 --enable-optimizations"
@@ -17,9 +18,8 @@ _python_make_install(){
     wget -c https://www.python.org/ftp/python/$version/$PKGNAME.tar.xz
     tar xf $PKGNAME.tar.xz
     cd $PKGNAME && $MAKE_OPT && make -j $(nproc) && make install 
-    cd ..
+    cd ../apps
     pwd
-    tree
     tar Jcvf $APPDIR.tar.xz $PKGNAME
 }
 
