@@ -18,7 +18,7 @@ _python_make_install(){
     wget -c https://www.python.org/ftp/python/$version/$PKGNAME.tar.xz
     tar xf $PKGNAME.tar.xz
     cd $PKGNAME && $MAKE_OPT && make -j $(nproc) && make install 
-    tar Jcvf $APPDIR.tar.xz $APPDIR
+    cd .. && tar Jcvf $APPDIR.tar.xz $APPDIR
 }
 
 _python_make_install "$@"
