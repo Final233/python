@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+basepath=$(cd `dirname $0`; pwd)
+
 if [ -z $@ ]; then
     version='3.8.13'
 else
@@ -8,7 +10,7 @@ fi
 
 APPDIR="python-$version"
 PKGNAME="Python-$version"
-MAKE_OPT="./configure --prefix=./${APPDIR} \
+MAKE_OPT="./configure --prefix=$basepath/${APPDIR} \
 –-enable-optimizations"
 
 _python_make_install(){
