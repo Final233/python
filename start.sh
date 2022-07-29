@@ -19,7 +19,7 @@ _python_make_install(){
     ls -l
     cd $PKGNAME && $MAKE_OPT && make -j $(nproc) && make install 
     cd ..
-    tar zcf $APPDIR.tar.xz $PKGNAME
+    tar Jcvf $APPDIR.tar.xz $PKGNAME
 }
 
 _python_make_install "$@"
