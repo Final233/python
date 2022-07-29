@@ -8,7 +8,7 @@ fi
 
 APPDIR="python-$version"
 PKGNAME="Python-$version"
-MAKE_OPT="./configure --prefix=${APPDIR} \
+MAKE_OPT="./configure --prefix=./${APPDIR} \
 –-enable-optimizations"
 
 _python_make_install(){
