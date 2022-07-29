@@ -16,9 +16,10 @@ MAKE_OPT="./configure --prefix=$basepath/${APPDIR} \
 _python_make_install(){
     wget -c https://www.python.org/ftp/python/$version/$PKGNAME.tar.xz
     tar xf $PKGNAME.tar.xz
-    ls -l
     cd $PKGNAME && $MAKE_OPT && make -j $(nproc) && make install 
     cd ..
+    pwd
+    tree
     tar Jcvf $APPDIR.tar.xz $PKGNAME
 }
 
