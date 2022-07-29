@@ -18,6 +18,8 @@ _python_make_install(){
     tar xf $PKGNAME.tar.xz
     ls -l
     cd $PKGNAME && $MAKE_OPT && make -j $(nproc) && make install 
+    cd ..
+    tar zcf $APPDIR.tar.xz $PKGNAME
 }
 
 _python_make_install "$@"
@@ -25,4 +27,4 @@ _python_make_install "$@"
 gh release delete ${APPDIR} -y
 
 # gh release create ${PKGNAME} ./*.tar.xz --title "${PKGNAME} (beta)" --notes "this is a nginx beta release" --prerelease
-gh release create ${APPDIR} ./*.tar.xz --title "${APPDIR}" --notes "this is a python release" --prerelease
+gh release create ${APPDIR} $APPDIR.tar.xz --title "${APPDIR}" --notes "this is a python release" --prerelease
