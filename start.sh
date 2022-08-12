@@ -26,4 +26,4 @@ _python_make_install "$@"
 gh release delete ${APPDIR} -y
 
 # gh release create ${PKGNAME} ./*.tar.xz --title "${PKGNAME} (beta)" --notes "this is a nginx beta release" --prerelease
-gh release create ${APPDIR} $APPDIR.tar.xz --title "${APPDIR}" --notes "this is a python release" --prerelease
+gh release create ${APPDIR} $APPDIR.tar.xz --title "${APPDIR}" --notes "this is a make python release"
